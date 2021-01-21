@@ -1,0 +1,52 @@
+- 하나의 서버로 프론트까지 서빙해야 할 수 있으니 API는 route에 `/api` prefix를 붙인다.
+- 데이터 모델
+	- 사용자 데이터모델
+		- userId
+		- email
+		- nickname
+		- password
+	- 상품 데이터모델
+		- goodsId
+		- name
+		- thumbnailUrl
+		- category
+		- price
+	- 장바구니 데이터모델
+		- userId
+		- goodsId
+		- quantity
+- API
+	- 상품목록 API
+		- GET /api/goods
+		- Request params
+			- category?
+	- 상품 상세조회 API
+		- GET /api/goods/{goodsId}
+	- 로그인 API
+		- POST /api/auth
+		- Request body
+			- email
+			- password
+	- 회원가입 API
+		- POST /api/users
+		- Request body
+			- email
+			- nickname
+			- password
+			- confirmPassword
+
+    - 장바구니 목록 API
+		- GET /api/cart
+
+	- 장바구니 담기 API
+		- POST /api/goods/{goodsId}/cart
+		- Request body
+			- quantity
+	- 장바구니 수정 API
+		- PATCH /api/goods/{goodsId}/cart
+		- Request body
+			- quantity
+	- 장바구니 삭제 API
+		- DELETE /api/goods/{goodsId}/cart
+		- StatusCode 200
+		- StatusCode 400
