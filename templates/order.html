@@ -36,7 +36,8 @@
         <script>
             $(document).ready(function () {
                 console.log(sessionStorage.getItem("priceSum"))
-                const socket = io.connect("http://localhost:5000");
+                // const socket = io.connect("http://localhost:5000");
+                const socket = io.connect("http://3.138.123.184:5000");
                 $("#nickname").text($.cookie("userName"))
                 $("#btnOrder").text(`$${number2decimals(sessionStorage.getItem("priceSum"))} 결제`).click(function () {
                     console.log("click!")

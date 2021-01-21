@@ -38,7 +38,8 @@
                 $("#categorySelect").on("change", function () {
                     get_goods($(this).val())
                 })
-                const socket = io.connect("http://localhost:5000");
+                // const socket = io.connect("http://localhost:5000");
+                const socket = io.connect("http://3.138.123.184:5000");
                 console.log(socket)
                 socket.on("orderSomething", function (data) {
                     console.log("new order!", data)
